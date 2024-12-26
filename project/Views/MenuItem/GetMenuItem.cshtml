@@ -1,0 +1,19 @@
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    MenuItem menuItem = ViewBag.MenuItem as MenuItem;
+}
+<div class="d-flex justify-content-between">
+    <div>
+        <h2>Item</h2>
+    </div>
+    <div>
+        <a href="/menuitem/update?id=@menuItem.MenuItemID" class="btn btn-success">Edit</a>
+    </div>
+</div>
+<div class="mb-3">
+    <div>Item number : @menuItem.MenuItemID</div>
+    <div>Item name : @menuItem.ItemName</div>
+    <div>Item price : @menuItem.Price</div>
+    <div>Item description : @menuItem.Description</div>
+</div>

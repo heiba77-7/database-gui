@@ -1,0 +1,30 @@
+@{
+    
+    ViewData["Title"] = "Add Employee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add Employee</h2>
+     <form action="/employee/add" method="post">
+            <div class="mb-3">
+                <label for="FirstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="FirstName" name="FirstName" placeholder="Enter first name" required>
+            </div>
+            <div class="mb-3">
+                <label for="LastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Enter last name" required>
+            </div>
+            <div class="mb-3">
+                <label for="Position" class="form-label">Position</label>
+                <input type="text" class="form-control" id="Position" name="Position" placeholder="Enter position" required>
+            </div>
+            <div class="mb-3">
+                <label for="PhoneNumber" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="PhoneNumber" name="PhoneNumber" placeholder="Enter phone number" required>
+            </div>
+            <div class="mb-3">
+                <label for="Email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="Email" name="Email" placeholder="Enter email" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Employee</button>
+     </form>

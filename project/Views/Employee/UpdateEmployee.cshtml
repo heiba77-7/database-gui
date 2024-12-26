@@ -1,0 +1,31 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    Employee employee = ViewBag.Employee as Employee;
+}
+
+<h2>Edit Employee</h2>
+
+ <form action="/employee/update?id=@employee.EmployeeID" method="post">
+            <div class="mb-3">
+                <label for="FirstName" class="form-label">First Name</label>
+                <input type="text" value="@employee.FirstName" class="form-control" id="FirstName" name="FirstName" placeholder="Enter first name" required>
+            </div>
+            <div class="mb-3">
+                <label for="LastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" value="@employee.LastName" id="LastName" name="LastName" placeholder="Enter last name" required>
+            </div>
+            <div class="mb-3">
+                <label for="Position" class="form-label">Position</label>
+                <input type="text" class="form-control" value="@employee.Position" id="Position" name="Position" placeholder="Enter position" required>
+            </div>
+            <div class="mb-3">
+                <label for="PhoneNumber" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="PhoneNumber" value="@employee.PhoneNumber" name="PhoneNumber" placeholder="Enter phone number" required>
+            </div>
+            <div class="mb-3">
+                <label for="Email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="Email" value="@employee.Email" name="Email" placeholder="Enter email" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Employee</button>
+     </form>

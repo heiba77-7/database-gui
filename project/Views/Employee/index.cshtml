@@ -1,0 +1,42 @@
+@{
+    Layout= "~/Views/Shared/_Layout.cshtml";
+    List<Employee> employees = ViewBag.Employees as List<Employee>;
+}
+
+<div class="d-flex justify-content-between">
+    <div>
+        <h2>Employees</h2>
+    </div>
+    <div>
+        <a href="/employee/add" class="btn btn-success">Add</a>
+    </div>
+</div>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">EmployeeName</th>
+      <th scope="col">EmployeePhone</th>
+      <th scope="col">EmployeeEmail</th>
+      <th scope="col">Position</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var item in employees)
+    {
+        <tr>
+            <th scope="row">@item.EmployeeID</th>
+            <td>@item.FirstName  @item.LastName</td>
+            <td>@item.PhoneNumber</td>
+            <td>@item.Email</td>
+            <td>@item.Position</td>
+
+            <td>
+                <a href="employee/@item.EmployeeID" class="btn btn-primary">View</a>
+            </td>
+        </tr>
+    }
+  </tbody>

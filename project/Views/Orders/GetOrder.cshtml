@@ -1,0 +1,49 @@
+@model Order
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Payment payment = ViewBag.Payment as Payment;
+    
+}
+<div class="d-flex justify-content-between">
+    <div>
+        <h2>Order</h2>
+    </div>
+    <div>
+        <a href="/order/update?id=@Model.OrderID" class="btn btn-success">Edit</a>
+    </div>
+</div>
+
+<div>
+    <h4>OrderID: @Model.OrderID</h4>
+    <h4>CustomerName: @Model.CustomerName</h4>
+    <h4>CustomerPhone: @Model.CustomerPhone</h4>
+    <h4>OrderDate: @Model.OrderDate</h4>
+    <h3>Payment</h3>
+    <h4>Payment Type : @payment.PaymentMethod</h4>
+    <h4>Payment Date : @payment.PaymentDate</h4>
+    <h4>Payment status : @payment.PaymentStatus</h4>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var item in ViewBag.MenuItems as List<MenuItem>)
+    {
+        <tr>
+            <th scope="row">@item.MenuItemID</th>
+            <td>@item.ItemName</td>
+            <td>@item.Price</td>
+            <td>@item.Description</td>
+        </tr>
+    }
+
+  </tbody>
+</table>
+
+</div>

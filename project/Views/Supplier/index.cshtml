@@ -1,0 +1,41 @@
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container d-flex justify-content-between">
+
+    <div>
+        <h1>Supplier List</h1>
+    </div>
+    <div>
+        <a href="supplier/add" class="btn btn-success">Add Supplier</a>
+    </div>
+</div>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">SupplierName</th>
+            <th scope="col">SupplierPhone</th>
+            <th scope="col">SupplierEmail</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.Suppliers as List<Supplier>)
+        {
+            <tr>
+                <th scope="row">@item.SupplierID</th>
+                <td>@item.SupplierName</td>
+                <td>@item.ContactNumber</td>
+                <td>@item.Email</td>
+                <td>
+                    <a href="supplier/@item.SupplierID" class="btn btn-primary">View</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

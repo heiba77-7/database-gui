@@ -1,0 +1,24 @@
+
+@{
+    Supplier supplier = ViewData["Supplier"] as Supplier;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Supplier</h2>
+<div class="d-flex justify-content-between">
+    <div>
+        <h2>Supplier</h2>
+    </div>
+    <div>
+        <a href="/Supplier/update?id=@supplier.SupplierID" class="btn btn-success">Edit</a>
+    </div>
+
+</div>
+
+<div class="mb-3">
+    <div>Supplier ID : @supplier.SupplierID</div>
+    <div>Supplier Name : @supplier.SupplierName</div>
+    <div>Supplier Phone : @supplier.ContactNumber</div>
+    <div>Supplier Email : @supplier.Email</div>
+    <div>Supplier Address : @supplier.Email</div>
+</div>

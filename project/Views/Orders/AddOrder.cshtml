@@ -1,0 +1,189 @@
+
+@{
+    ViewData["Title"] = "Add Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add Order</h2>
+<form id="addorderform">
+    <div class="mb-3">
+        <label for="CustomerName" class="form-label">
+            Customer Name
+        </label>
+        <input type="text" class="form-control" id="CustomerName" name="CustomerName" placeholder="Enter customer name" required>
+    </div>
+    <div class="mb-3">
+        <label for="CustomerPhone" class="form-label">
+            Customer Phone
+        </label>
+        <input type="tel" class="form-control" id="CustomerPhone" name="CustomerPhone" placeholder="Enter customer phone" required>
+    </div>
+    <div class="mb-3">
+        <label for="OrderDate" class="form-label">
+            Order Date
+        </label>
+        <input type="date" class="form-control" id="OrderDate" name="OrderDate" required>
+    </div>
+    <div class="mb-3">
+        <label for="DeliveryAddress" class="form-label">
+            Delivery Address
+        </label>
+        <input type="text" class="form-control" id="DeliveryAddress" name="DeliveryAddress" placeholder="Enter delivery address" required>
+    </div>
+    <div class="mb-3">
+        <label for="DeliveryStatus" class="form-label">
+            Delivery Status
+        </label>
+        <select class="form-select" id="DeliveryStatus" name="DeliveryStatus" required>
+            <option value="Pending">Pending</option>
+            <option value="Delivered">Delivered</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="DeliveryDate" class="form-label">Delivery Date</label>
+        <input type="date" class="form-control" id="DeliveryDate" name="DeliveryDate" required>
+    </div>
+    <div class="mb-3">
+        <label for="EmployeeID" class="form-label">Driver</label>
+        <select class="form-select" id="EmployeeID" name="EmployeeID" required>
+            @foreach(var item in ViewBag.Employees as List<Employee>)
+            {
+                if(item.Position == "Delivery Driver")
+                {
+                    <option value="@item.EmployeeID">@item.FirstName @item.LastName</option>
+                }
+            }
+        </select>
+    </div>
+    <div class="mt-3">
+        <label for="PaymentMethod">PaymentMethod</label>
+        <select class="form-select" id="PaymentMethod" name="PaymentMethod" required>
+            <option value="Cash">Cash</option>
+            <option value="Credit Card">Credit Card</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="PaymentStatus" class="form-label">Payment Status</label>
+        <select class="form-select" id="PaymentStatus" name="PaymentStatus" required>
+            <option value="Pending">Pending</option>
+            <option value="Paid">Paid</option>
+        </select>
+    </div>
+    <div class="mt-3">
+        <label for="PaymentDate">Payment Date</label>
+        <input type="date" class="form-control" id="PaymentDate" name="PaymentDate" required>
+    </div>
+    <button type="button " class="btn btn-primary mt-1"
+    onclick="AddMenuItem()">Add item</button>
+    <div id="container-menu-items"></div>
+
+    <button type="submit" class="btn btn-primary mt-1">
+        Add Order
+    </button>
+
+        
+
+
+
+
+</form>
+
+
+
+<script>
+    let form = document.getElementById('addorderform');
+
+    form.addEventListener("submit",function(e){
+        e.preventDefault();
+        let formData = new FormData(form);
+        let customerName = formData.get('CustomerName');
+        let customerPhone = formData.get('CustomerPhone');
+        let orderDate = formData.get('OrderDate');
+        let deliveryAddress = formData.get('DeliveryAddress');
+        let deliveryStatus = formData.get('DeliveryStatus');
+        let deliveryDate = formData.get('DeliveryDate');
+        let employeeID = formData.get('EmployeeID');
+        let paymentMethod = formData.get('PaymentMethod');
+        let paymentStatus = formData.get('PaymentStatus');
+        let paymentDate = formData.get('PaymentDate');
+        let orderDetails = [];
+        let items = document.querySelectorAll('.menu-item');
+        console.log(items);
+        items.forEach(item=>{
+            let menuItemID = item.querySelector('select[name*="MenuItemID"]').value;
+            let quantity = item.querySelector('input[name*="Quantity"]').value;
+            let price = item.querySelector('input[name*="Price"]').value;
+            orderDetails.push({
+                
+                MenuItemID: menuItemID,
+                Quantity: quantity,
+                Price: price
+            });
+        });
+        let data = {
+            "order":{
+                customerName,
+                customerPhone,
+                orderDate
+            },
+            "orderdelivery":{
+                deliveryAddress,
+                deliveryStatus,
+                deliveryDate,
+                OrderId: 0,
+                employeeID
+            },
+            "payment":{
+                paymentMethod,
+                paymentStatus,
+                paymentDate
+            },
+            "orderDetails": orderDetails
+        };
+        console.log(data);
+        fetch('/order/add',{
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(response=>{
+            if(response.ok){
+                alert('Order added successfully');
+                window.location.href = '/order';
+            }
+        });
+    });
+    let itemIndex = 0;
+    function AddMenuItem(){
+         let menuItemDiv = `
+         <div class="form-group menu-item">
+            <div class="form-group">
+                <label for="MenuItemID" class="form-label
+                ">Item</label>
+                <select class="form-select" name="MenuItemID" required>
+                    @foreach(var item in ViewBag.MenuItems as List<MenuItem>)
+                    {
+                        <option value="@item.MenuItemID">@item.ItemName</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Quantity" class="form-label">Quantity</label>
+                <input type="number" class="form-control" name="Quantity" placeholder="Enter quantity" required>
+            </div>
+            <div class="form-group">
+                <label for="Price" class="form-label">Price</label>
+                <input type="number" class="form-control" name="Price" placeholder="Enter price" required>
+            </div>
+        </div>
+            <button type="button" class="btn btn-danger mt-1" onclick="removeMenuItem(this)">Remove</button>
+            <hr>
+        `;
+        let container = document.getElementById('container-menu-items');
+        container.insertAdjacentHTML('beforeend',menuItemDiv);
+        itemIndex++;
+    }
+
+
+</script>

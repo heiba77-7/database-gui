@@ -1,0 +1,18 @@
+
+
+@{
+    Layout= "~/Views/Shared/_Layout.cshtml";
+    Employee employee = ViewBag.Employee as Employee;
+}
+<div class="d-flex justify-content-between">
+    <div>
+        <h2>Employee</h2>
+    </div>
+    <div>
+        <a href="/employee/update/@employee.EmployeeID" class="btn btn-success">Edit</a>
+    </div>
+</div>
+<h4>EmployeeID: @employee.EmployeeID</h4>
+<h4>EmployeeName: @employee.FirstName @employee.LastName</h4>
+<h4>EmployeePhone: @employee.PhoneNumber</h4>
+<h4>EmployeeEmail: @employee.Email</h4>

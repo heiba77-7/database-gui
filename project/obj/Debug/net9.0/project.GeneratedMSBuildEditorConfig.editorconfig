@@ -1,0 +1,89 @@
+is_global = true
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = project
+build_property.RootNamespace = project
+build_property.ProjectDir = /media/heiba/E/resurant/project/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /media/heiba/E/resurant/project
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[/media/heiba/E/resurant/project/Views/Employee/AddEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvQWRkRW1wbG95ZWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/heiba/E/resurant/project/Views/Employee/GetEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvR2V0RW1wbG95ZWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/heiba/E/resurant/project/Views/Employee/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvaW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/heiba/E/resurant/project/Views/Employee/UpdateEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvVXBkYXRlRW1wbG95ZWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/heiba/E/resurant/project/Views/MenuItem/AddMenuItem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVudUl0ZW0vQWRkTWVudUl0ZW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/heiba/E/resurant/project/Views/MenuItem/GetMenuItem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVudUl0ZW0vR2V0TWVudUl0ZW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/heiba/E/resurant/project/Views/MenuItem/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVudUl0ZW0vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/heiba/E/resurant/project/Views/MenuItem/UpdateMenuItem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVudUl0ZW0vVXBkYXRlTWVudUl0ZW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/heiba/E/resurant/project/Views/Orders/AddOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3JkZXJzL0FkZE9yZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/heiba/E/resurant/project/Views/Orders/GetOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3JkZXJzL0dldE9yZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/heiba/E/resurant/project/Views/Orders/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3JkZXJzL2luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/heiba/E/resurant/project/Views/Orders/UpdateOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3JkZXJzL1VwZGF0ZU9yZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/heiba/E/resurant/project/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/heiba/E/resurant/project/Views/Supplier/AddSupplier.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3VwcGxpZXIvQWRkU3VwcGxpZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/heiba/E/resurant/project/Views/Supplier/GetSupplier.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3VwcGxpZXIvR2V0U3VwcGxpZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/heiba/E/resurant/project/Views/Supplier/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3VwcGxpZXIvaW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/heiba/E/resurant/project/Views/Supplier/UpdateSupplier.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3VwcGxpZXIvVXBkYXRlU3VwcGxpZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

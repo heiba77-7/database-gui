@@ -1,0 +1,30 @@
+@{
+    Layout= "~/Views/Shared/_Layout.cshtml";
+    Supplier supplier = ViewData["Supplier"] as Supplier;
+
+}
+
+<h2>Edit Supplier</h2>
+<form action="/supplier/add" method="post">
+    <div class="mb-3">
+        <label for="SupplierName" class="form-label"#>
+            Supplier Name
+        </label>
+        <input value="@supplier.SupplierName" type="text" class="form-control" id="SupplierName" name="SupplierName" placeholder="Enter supplier name" required>
+    </div>
+    <div class="mb-3">
+        <label for="ContactNumber" class="form-label">
+            Contact Number
+        </label>
+        <input value="@supplier.ContactNumber" type="tel" class="form-control" id="ContactNumber" name="ContactNumber" placeholder="Enter contact number" required>
+    </div>
+    <div class="mb-3">
+        <label for="Email" class="form-label">
+            Email
+        </label>
+        <input type="email" class="form-control" value="@supplier.Email" id="Email" name="Email" placeholder="Enter email" required>
+    </div>
+    <button type="submit" class="btn btn-primary">
+        Add Supplier
+    </button>
+</form>
